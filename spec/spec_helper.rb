@@ -4,14 +4,15 @@ require 'active_support'
 require 'action_pack'
 require 'action_view'
 require 'action_controller'
+require 'action_mailer'
 
 require File.expand_path(File.join(File.dirname(__FILE__), '../lib/formtastic/util'))
 require File.expand_path(File.join(File.dirname(__FILE__), '../lib/formtastic'))
 require File.expand_path(File.join(File.dirname(__FILE__), '../lib/formtastic/layout_helper'))
 
 # Requires supporting files with custom matchers and macros, etc,
-# in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+# in ./support/ and its subdirectories in alphabetic order.
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].sort.each {|f| require f}
 
 module FormtasticSpecHelper
   include ActionPack
